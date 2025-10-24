@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tugas 2 - Tampilan Next</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    iframe {
+      width: 90%;
+      height: 80vh;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      background: white;
+      margin-bottom: 15px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>📘 Tugas 2 - Display, Float, dan Block</h1>
+  <iframe id="viewer" src="display.html"></iframe><br />
+  <button id="prev">⬅ Sebelumnya</button>
+  <button id="next">Berikutnya ➡</button>
+
+  <script>
+    const tugas = ["display.html", "float.html", "block.html"];
+    let current = 0;
+
+    const iframe = document.getElementById("viewer");
+    const nextBtn = document.getElementById("next");
+    const prevBtn = document.getElementById("prev");
+
+    function updateFrame() {
+      iframe.src = tugas[current];
+      prevBtn.disabled = current === 0;
+      nextBtn.disabled = current === tugas.length - 1;
+    }
+
+    nextBtn.addEventListener("click", () => {
+      if (current < tugas.length - 1) {
+        current++;
+        updateFrame();
+      }
+    });
+
+    prevBtn.addEventListener("click", () => {
+      if (current > 0) {
+        current--;
+        updateFrame();
+      }
+    });
+
+    updateFrame();
+  </script>
+</body>
+</html>
