@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Pribadi Sugiati</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1><span class="typing"></span></h1>
+  <p>Mahasiswi UIN Datokarama Palu yang gemar membaca, menulis, dan berkreasi</p>
+</header>
+
+<div class="foto-profil">
+  <img src="jpg.fotougi1.jpeg" alt="Foto Profil Sugiati" title="Foto Profil Sugiati">
+</div>
+
+<div class="section-wrapper">
+
+  <section class="about">
+    <h2>Tentang Saya</h2>
+    <p>Saya adalah mahasiswi UIN Datokarama Palu kelahiran <strong>29 April 2006</strong> yang tinggal di <strong>Jl. Kancil</strong>. Saya memiliki ketertarikan besar terhadap dunia bisnis. Hobi Saya membaca, dan menulis, serta senang memasak dan bernyanyi. Saya percaya bahwa kreativitas dan semangat belajar dapat membawa perubahan positif dalam hidup.</p>
+  </section>
+
+  <hr>
+
+  <section class="biodata">
+    <h2>Biodata Diri</h2>
+    <table>
+      <tr><th>Nama</th><td>Sugiati</td></tr>
+      <tr><th>NIM</th><td>246270026</td></tr>
+      <tr><th>Tanggal Lahir</th><td>29 April 2006</td></tr>
+      <tr><th>Alamat</th><td>Jl. Kancil</td></tr>
+      <tr><th>Email</th><td>sugiatigia154@gmail.com</td></tr>
+    </table>
+  </section>
+
+  <hr>
+
+  <!-- Bagian baru agar tampilan tidak kosong -->
+  <section class="tujuan">
+    <h3 style="text-align:center; color:#5DADE2;">Tujuan Web Ini</h3>
+    <p style="text-align:center; color:#2C3E50; line-height:1.6;">
+      Website ini dibuat untuk memenuhi tugas mata kuliah <strong>Pemrograman Web Dasar</strong>. 
+      Tujuannya adalah untuk menampilkan profil pribadi dengan memanfaatkan 
+      struktur HTML, CSS, serta animasi interaktif agar terlihat menarik.
+    </p>
+  </section>
+
+  <hr>
+
+  <section class="lists">
+    <div>
+      <h3>Hobi Saya</h3>
+      <ul>
+        <li>Membaca</li>
+        <li>Menulis Cerpen</li>
+        <li>Memasak</li>
+        <li>Bernyanyi</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Aktivitas Favorit</h3>
+      <ol>
+        <li>Membaca</li>
+        <li>Menyanyi</li>
+        <li>Memasak</li>
+      </ol>
+    </div>
+  </section>
+
+  <hr>
+
+  <p style="text-align:center;font-style:italic;color:#2C3E50;margin-bottom:10px;">
+    Silakan isi data pribadi Anda di bawah ini 👇
+  </p>
+
+  <form>
+    <h3>Formulir Data Pribadi</h3>
+    <label for="nama">Nama:</label>
+    <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Masukkan email Anda">
+
+    <label>Jenis Kelamin:</label>
+    <div>
+      <input type="radio" id="pria" name="gender" value="Pria"><label for="pria">Pria</label>
+      <input type="radio" id="wanita" name="gender" value="Wanita"><label for="wanita">Wanita</label>
+    </div>
+
+    <label>Hobi:</label>
+    <div>
+      <input type="checkbox" id="h1" value="Membaca"><label for="h1">Membaca</label>
+      <input type="checkbox" id="h2" value="Menulis Cerpen"><label for="h2">Menulis Cerpen</label>
+      <input type="checkbox" id="h3" value="Memasak"><label for="h3">Memasak</label>
+      <input type="checkbox" id="h4" value="Bernyanyi"><label for="h4">Bernyanyi</label>
+    </div>
+
+    <button type="submit">Kirim</button>
+  </form>
+
+</div>
+
+<footer>
+  <p>&copy; <span id="year"></span> Sugiati | Tugas Pemrograman Web Dasar</p>
+</footer>
+
+<button id="backToTop" title="Kembali ke atas">⬆️</button>
+
+<script>
+  // efek mengetik
+  const text="Halo, Saya Sugiati 👋";
+  const typingEl=document.querySelector('.typing');
+  let i=0,forward=true;
+  setInterval(()=>{
+    if(forward){
+      typingEl.textContent=text.substring(0,i++);
+      if(i===text.length)forward=false;
+    }else{
+      typingEl.textContent=text.substring(0,i--);
+      if(i===0)forward=true;
+    }
+  },150);
+
+  // animasi scroll reveal
+  const reveals=document.querySelectorAll('.about,.biodata,.tujuan,.lists div,form');
+  window.addEventListener('scroll',()=>{
+    for(let el of reveals){
+      const winH=window.innerHeight;
+      const top=el.getBoundingClientRect().top;
+      if(top<winH-100)el.classList.add('show');
+    }
+  });
+
+  // tombol kembali ke atas
+  const btn=document.getElementById("backToTop");
+  window.onscroll=function(){
+    btn.style.display=(window.scrollY>300)?"block":"none";
+  };
+  btn.onclick=function(){
+    window.scrollTo({top:0,behavior:"smooth"});
+  };
+
+  // footer tahun otomatis
+  document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+
+</body>
+</html>
