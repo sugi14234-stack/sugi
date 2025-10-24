@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kumpulan Tugas sugiati</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    iframe {
+      width: 90%;
+      height: 80vh;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      background: white;
+      margin-bottom: 15px;
+    }
+    button {
+      padding: 10px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      margin: 5px;
+      transition: 0.2s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>📘 Kumpulan Tugas sugiati</h1>
+  <iframe id="viewer" src="tugas1/index.html"></iframe><br />
+  <button id="prev">⬅ Sebelumnya</button>
+  <button id="next">Berikutnya ➡</button>
+
+  <script>
+    const tugas = [
+      "tugas1/index.html",
+      "tugas2/index.html",
+      "tugas3/index.html",
+      "tugas4/index.html"
+    ];
+    let current = 0;
+
+    const iframe = document.getElementById("viewer");
+    const nextBtn = document.getElementById("next");
+    const prevBtn = document.getElementById("prev");
+
+    function updateFrame() {
+      iframe.src = tugas[current];
+      prevBtn.disabled = current === 0;
+      nextBtn.disabled = current === tugas.length - 1;
+    }
+
+    nextBtn.addEventListener("click", () => {
+      if (current < tugas.length - 1) {
+        current++;
+        updateFrame();
+      }
+    });
+
+    prevBtn.addEventListener("click", () => {
+      if (current > 0) {
+        current--;
+        updateFrame();
+      }
+    });
+
+    updateFrame();
+  </script>
+</body>
+</html>
