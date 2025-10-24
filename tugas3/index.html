@@ -5,6 +5,123 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profil Pribadi Sugiati</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #FDFEFE;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      background-color: #5DADE2;
+      color: white;
+      padding: 30px 10px;
+    }
+
+    .foto-profil img {
+      display: block;
+      margin: 20px auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 3px solid #5DADE2;
+      object-fit: cover;
+    }
+
+    .section-wrapper {
+      width: 85%;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2, h3 {
+      color: #2471A3;
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #5DADE2;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #F2F4F4;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    input, button {
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #5DADE2;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2471A3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #5DADE2;
+      color: white;
+      margin-top: 30px;
+    }
+
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+      background: #5DADE2;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+      transition: 0.5s ease-in-out;
+    }
+  </style>
 </head>
 <body>
 
@@ -21,11 +138,12 @@
 
   <section class="about">
     <h2>Tentang Saya</h2>
-    <p>Saya adalah mahasiswi UIN Datokarama Palu kelahiran <strong>29 April 2006</strong> yang tinggal di <strong>Jl. Kancil</strong>. Saya memiliki ketertarikan besar terhadap dunia bisnis. Hobi Saya membaca, dan menulis, serta senang memasak dan bernyanyi. Saya percaya bahwa kreativitas dan semangat belajar dapat membawa perubahan positif dalam hidup.</p>
+    <p>Saya adalah mahasiswi UIN Datokarama Palu kelahiran <strong>29 April 2006</strong> yang tinggal di <strong>Jl. Kancil</strong>. Saya memiliki ketertarikan besar terhadap dunia bisnis. Hobi saya membaca, menulis, serta senang memasak dan bernyanyi. Saya percaya bahwa kreativitas dan semangat belajar dapat membawa perubahan positif dalam hidup.</p>
   </section>
 
   <hr>
 
+  <!-- Tabel Biodata -->
   <section class="biodata">
     <h2>Biodata Diri</h2>
     <table>
@@ -34,12 +152,51 @@
       <tr><th>Tanggal Lahir</th><td>29 April 2006</td></tr>
       <tr><th>Alamat</th><td>Jl. Kancil</td></tr>
       <tr><th>Email</th><td>sugiatigia154@gmail.com</td></tr>
+      <tr><th>Hobi</th><td>Membaca, Menulis, Memasak, Bernyanyi</td></tr>
     </table>
   </section>
 
   <hr>
 
-  <!-- Bagian baru agar tampilan tidak kosong -->
+  <!-- Tabel Aktivitas Favorit -->
+  <section class="aktivitas">
+    <h2>Aktivitas Favorit</h2>
+    <table>
+      <tr>
+        <th>No</th>
+        <th>Nama Aktivitas</th>
+        <th>Waktu Pelaksanaan</th>
+        <th>Deskripsi Singkat</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Membaca Buku</td>
+        <td>Setiap Pagi</td>
+        <td>Menambah wawasan dan pengetahuan baru.</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Menulis Cerpen</td>
+        <td>Setiap Weekend</td>
+        <td>Menyalurkan ide dan imajinasi menjadi karya.</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Memasak</td>
+        <td>Waktu Luang</td>
+        <td>Mengasah kreativitas membuat makanan baru.</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Bernyanyi</td>
+        <td>Sore Hari</td>
+        <td>Menghibur diri dan melepas stres.</td>
+      </tr>
+    </table>
+  </section>
+
+  <hr>
+
   <section class="tujuan">
     <h3 style="text-align:center; color:#5DADE2;">Tujuan Web Ini</h3>
     <p style="text-align:center; color:#2C3E50; line-height:1.6;">
@@ -50,32 +207,6 @@
   </section>
 
   <hr>
-
-  <section class="lists">
-    <div>
-      <h3>Hobi Saya</h3>
-      <ul>
-        <li>Membaca</li>
-        <li>Menulis Cerpen</li>
-        <li>Memasak</li>
-        <li>Bernyanyi</li>
-      </ul>
-    </div>
-    <div>
-      <h3>Aktivitas Favorit</h3>
-      <ol>
-        <li>Membaca</li>
-        <li>Menyanyi</li>
-        <li>Memasak</li>
-      </ol>
-    </div>
-  </section>
-
-  <hr>
-
-  <p style="text-align:center;font-style:italic;color:#2C3E50;margin-bottom:10px;">
-    Silakan isi data pribadi Anda di bawah ini 👇
-  </p>
 
   <form>
     <h3>Formulir Data Pribadi</h3>
@@ -126,7 +257,7 @@
   },150);
 
   // animasi scroll reveal
-  const reveals=document.querySelectorAll('.about,.biodata,.tujuan,.lists div,form');
+  const reveals=document.querySelectorAll('.about,.biodata,.tujuan,.aktivitas,form');
   window.addEventListener('scroll',()=>{
     for(let el of reveals){
       const winH=window.innerHeight;
