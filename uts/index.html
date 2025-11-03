@@ -4,13 +4,212 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portofolio Sugiati</title>
-  <link rel="stylesheet" href="uts/css/bootstrap-grid.css" type="text/css">
-  <link rel="stylesheet" href="css/styles.css" type="text/css">
+
+  <!-- Bootstrap Grid -->
+  <link rel="stylesheet" href="css/bootstrap-grid.css" type="text/css">
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;600;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ======= GLOBAL STYLE ======= */
+    body {
+      font-family: 'Space Mono', monospace;
+      background-color: #f8fbff;
+      color: #e1e5e9;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s ease;
+    }
+
+    h1, h2, .skill-list {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 15px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    nav {
+      background-color: #0d1b2a;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    nav ul {
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin: 0 15px;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    nav li a {
+      text-decoration: none;
+      color: #e0e1dd;
+      transition: 0.3s;
+    }
+
+    nav li a:hover {
+      color: #5dade2;
+      text-decoration: underline;
+    }
+
+    li.empty {
+      width: 90px;
+      border-top: 1px solid #e0e1dd;
+      position: relative;
+      top: -5px;
+    }
+
+    header {
+      padding-top: 120px;
+      padding-bottom: 80px;
+      background: linear-gradient(120deg, #1b263b 0%, #415a77 100%);
+      color: white;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    header h1 {
+      font-size: 80px;
+      line-height: 120%;
+      color: #e0e1dd;
+    }
+
+    header ul li {
+      list-style: none;
+      margin: 8px 0;
+      color: #a9bcd0;
+    }
+
+    .button {
+      border: 2px solid #5dade2;
+      font-size: 15px;
+      border-radius: 25px;
+      text-decoration: none;
+      color: #5dade2;
+      padding: 10px 25px;
+      margin-top: 20px;
+      display: inline-block;
+      transition: all 0.4s ease;
+    }
+
+    .button:hover {
+      background-color: #5dade2;
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(93, 173, 226, 0.5);
+    }
+
+    .intro-img {
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.25);
+      margin-top: 20px;
+    }
+
+    .skill-list {
+      text-align: center;
+      font-size: 45px;
+      line-height: 160%;
+      margin: 100px 0;
+      color: #1b263b;
+    }
+
+    .project {
+      margin: 0;
+      padding: 80px 0;
+      transition: 0.5s ease-in-out;
+    }
+
+    .project:nth-child(even) {
+      background-color: #f0f5fa;
+    }
+
+    .project:nth-child(odd) {
+      background-color: #e8f1fa;
+    }
+
+    .project:hover {
+      background-color: #e3edf7;
+    }
+
+    .project h2 {
+      font-size: 32px;
+      color: #0d1b2a;
+    }
+
+    .project p {
+      line-height: 1.7;
+      color: #3a506b;
+    }
+
+    figure {
+      margin: 0;
+    }
+
+    figcaption {
+      font-size: 12px;
+      margin-top: 8px;
+      color: #6c757d;
+    }
+
+    .right-alignment {
+      text-align: right;
+    }
+
+    footer {
+      text-align: center;
+      padding: 80px 20px;
+      background-color: #1b263b;
+      color: #e0e1dd;
+    }
+
+    footer h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #e0e1dd;
+    }
+
+    footer a {
+      color: #5dade2;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 55px;
+      }
+      .skill-list {
+        font-size: 30px;
+      }
+      .project {
+        padding: 40px 10px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Navbar -->
   <nav>
     <ul>
       <li><a href="#contact">contact</a></li>
@@ -22,11 +221,9 @@
     </ul>
   </nav>
 
-  <!-- Header -->
   <header>
     <div class="container">
       <div class="row">
-        <!-- Kiri -->
         <div class="col-sm">
           <h1>Hi, I’m<br>Sugiati</h1>
           <ul>
@@ -36,7 +233,6 @@
           </ul>
           <a href="#projects" class="button">Lihat Proyek Saya</a>
         </div>
-        <!-- Kanan -->
         <div class="col-sm">
           <figure>
             <img src="img/sugiati.jpg" class="intro-img" alt="Foto Sugiati">
@@ -47,7 +243,6 @@
     </div>
   </header>
 
-  <!-- Skill List -->
   <section>
     <ul class="skill-list">
       <li>01_Web Design</li>
@@ -58,94 +253,26 @@
     </ul>
   </section>
 
-  <!-- Project 1 -->
-  <section class="project blue" id="projects">
+  <section class="project" id="projects">
     <div class="container">
       <div class="row">
         <div class="col-sm">
           <figure>
             <img src="img/belajarweb.jpg" alt="Website Portofolio">
-            <figcaption class="right-alignment">Project Web Portofolio</figcaption>
+            <figcaption>Project Web Portofolio</figcaption>
           </figure>
         </div>
         <div class="col-sm">
-          <h2>Website Portofolio<br>Pribadi</h2>
+          <h2>Website Portofolio Pribadi</h2>
           <p>Membangun website portofolio pribadi menggunakan HTML, CSS, dan Bootstrap grid system. Proyek ini menampilkan profil, skill, dan karya dengan desain elegan dan responsif.</p>
-          <a href="detail.html" class="button">Lihat Detail</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Project 2 -->
-  <section class="project">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm right-alignment">
-          <h2>UI/UX Prototype
-Aplikasi KampusPay <br>KampusPay</h2>
-          <p>adalah proyek desain UI/UX berbasis <b>Figma</b> yang dikembangkan 
-          untuk membantu mahasiswa melakukan pembayaran kuliah, UKT, dan layanan kampus 
-          secara digital. Prototipe ini menampilkan alur pengguna yang intuitif, 
-          desain bersih, dan sistem notifikasi yang interaktif. .</p>
-          <a href="detail2.html" class="button">Lihat Detail</a>
-        </div>
-        <div class="col-sm">
-          <figure>
-            <img src="img/kampuspay.PNG" alt="UI/UX Prototype
-Aplikasi KampusPay">
-            <figcaption>Tampilan Desain UI Aplikasi KampusPay di Figma</figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Project 3 -->
-  <section class="project blue">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm">
-          <figure>
-            <img src="img/canva.jpg" alt="Desain Poster Digital">
-            <figcaption class="right-alignment">Desain Poster Digital</figcaption>
-          </figure>
-        </div>
-        <div class="col-sm">
-          <h2>Desain Poster<br>Digital</h2>
-          <p>Mendesain poster promosi acara kampus menggunakan Canva dan Figma. Fokus pada warna lembut, tata letak bersih, dan pesan visual yang kuat.</p>
-          <a href="detail3.html" class="button">Lihat Detail</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Project 4 -->
-  <section class="project">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm right-alignment">
-          <h2>Website<br>Kos-Kosan</h2>
-          <p>Merancang website pemesanan kos sederhana yang memudahkan pengguna mencari kos sesuai lokasi dan harga. Menggunakan HTML, CSS, dan struktur database sederhana.</p>
-          <a href="detail4.html" class="button">Lihat Detail</a>
-        </div>
-        <div class="col-sm">
-          <figure>
-            <img src="img/kos.jpeg" alt="Website Kos-Kosan">
-            <figcaption>Project Website Kos-Kosan</figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer id="contact">
-    <h2>Any Questions?<br>
-      Find Me Here<br>
-      <a href="mailto:sugi14234@gmail.com">sugi14234@gmail.com</a>
-    </h2>
-    <p>Designed with by Sugiati | 2025</p>
+    <h2>Any Questions?<br>Find Me Here<br><a href="mailto:sugi14234@gmail.com">sugi14234@gmail.com</a></h2>
+    <p>Designed by Sugiati | 2025</p>
   </footer>
 </body>
 </html>
