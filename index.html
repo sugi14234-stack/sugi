@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kumpulan Tugas sugiati</title>
+  <title>Kumpulan Tugas Sugiati</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -44,20 +44,22 @@
   </style>
 </head>
 <body>
-  <h1>📘 Kumpulan Tugas sugiati</h1>
+  <h1>📘 Kumpulan Tugas Sugiati</h1>
   <iframe id="viewer" src="tugas1/index.html"></iframe><br />
   <button id="prev">⬅ Sebelumnya</button>
   <button id="next">Berikutnya ➡</button>
 
   <script>
+    // Daftar halaman tugas yang akan ditampilkan
     const tugas = [
       "tugas1/index.html",
       "tugas2/index.html",
       "tugas3/index.html",
-      "tugas4/index.html"
+      "tugas4/index.html",
+      "uts/index.html" // ← Tambahan untuk menampilkan halaman UTS
     ];
-    let current = 0;
 
+    let current = 0;
     const iframe = document.getElementById("viewer");
     const nextBtn = document.getElementById("next");
     const prevBtn = document.getElementById("prev");
